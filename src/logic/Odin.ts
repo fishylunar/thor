@@ -59,9 +59,14 @@ export async function getEvents(): Promise<OdinEvents> {
         return div.textContent || "";
       };
 
+      let station = decode(cells[1].innerHTML);
+      if (station === "") {
+        station = "N/A";
+      }
+
       return {
         responder: decode(cells[0].innerHTML),
-        station: decode(cells[1].innerHTML),
+        station: station,
         timestamp: decode(cells[2].innerHTML),
         message: decode(cells[3].innerHTML),
       };

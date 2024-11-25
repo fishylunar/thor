@@ -18,14 +18,12 @@ export type { OdinEvent, OdinEvents };
  */
 export async function getEvents(): Promise<OdinEvents> {
   const url =
-    "https://api.cors.lol/?url=" + // CORS Proxy xd
+    "https://corsproxy.io/?" + // CORS Proxy xd
     encodeURIComponent("http://www.odin.dk/112puls/");
   try {
     const response = await fetch(url, {
       headers: {
         Accept: "text/html",
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
       },
     });
 

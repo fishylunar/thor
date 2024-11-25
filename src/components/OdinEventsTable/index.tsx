@@ -11,7 +11,7 @@ export function OdinEventsTable({ events }: OdinEventsTableProps) {
     <>
       <Table>
         <TableHeader>
-          <TableRow>
+          <TableRow className='font-black'>
             <TableCell>Responder</TableCell>
             <TableCell>Station</TableCell>
             <TableCell>Message</TableCell>

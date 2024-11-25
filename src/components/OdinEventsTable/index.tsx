@@ -13,8 +13,8 @@ export function OdinEventsTable({ events }: OdinEventsTableProps) {
           <TableRow>
             <TableCell>Responder</TableCell>
             <TableCell>Station</TableCell>
-            <TableCell>Timestamp</TableCell>
             <TableCell>Message</TableCell>
+            <TableCell>Timestamp</TableCell>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -22,8 +22,8 @@ export function OdinEventsTable({ events }: OdinEventsTableProps) {
             <TableRow key={odinEvent.timestamp}>
               <TableCell>{odinEvent.responder}</TableCell>
               <TableCell>{odinEvent.station}</TableCell>
-              <TableCell>{odinEvent.timestamp}</TableCell>
               <TableCell>{odinEvent.message}</TableCell>
+              <TableCell>{odinEvent.timestamp}</TableCell>
             </TableRow>
           ))}
         </TableBody>

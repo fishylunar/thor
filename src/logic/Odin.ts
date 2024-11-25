@@ -60,7 +60,7 @@ export async function getEvents(): Promise<OdinEvents> {
       };
 
       let station = decode(cells[1].innerHTML);
-      if (station === "") {
+      if (["", " "].includes(station)) {
         station = "N/A";
       }
 

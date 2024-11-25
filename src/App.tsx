@@ -16,7 +16,7 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-<div className="bg-gradient-to-br from-[#441D9B] via-[#CD0D46] backdrop-blur-xl">
+<div className="bg-gradient-to-tr from-[#441D9B] via-[#CD0D46] backdrop-blur-xl">
   <Header/>
   <div className=" bg-slate-900 shadow-2xl rounded-xl mr-5 ml-5 mb-8 lg:mr-64 lg:ml-64">
     <OdinEventsTable events={events} />

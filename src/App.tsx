@@ -17,7 +17,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header/>
-      <div className="pl-1 pr-1 bg-slate-900 shadow-xl rounded-xl mr-5 ml-5 mb-8">
+      <div className=" bg-slate-900 shadow-2xl rounded-xl mr-5 ml-5 mb-8 lg:mr-64 lg:ml-64">
         <OdinEventsTable events={events} />
       </div>
       <Footer/>

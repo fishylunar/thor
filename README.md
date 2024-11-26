@@ -6,7 +6,7 @@
 
 A web application for viewing danish first responder messages.
 
-Try it out! - https://fishylunar.github.io/thor
+Try it out! - https://thor.staun.tech
 
 <br>
 

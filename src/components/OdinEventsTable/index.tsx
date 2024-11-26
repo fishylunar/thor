@@ -19,8 +19,8 @@ export function OdinEventsTable({ events }: OdinEventsTableProps) {
           </TableRow>
         </TableHeader>
         <TableBody className='divide-y'>
-        {events ? (
-            events.map((odinEvent: OdinEvent) => (
+        {events?.Events ? (
+            events.Events.map((odinEvent: OdinEvent) => (
               <TableRow key={odinEvent.timestamp}>
                 <TableCell>{odinEvent.responder}</TableCell>
                 <TableCell>{odinEvent.station}</TableCell>

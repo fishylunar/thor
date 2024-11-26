@@ -5,11 +5,16 @@ interface OdinEvent {
   timestamp: string;
   message: string;
 }
-
+type OdinEventTimestamp = string | undefined;
 // array of odin events
-type OdinEvents = OdinEvent[];
+type OdinEventsArray = OdinEvent[];
 
-export type { OdinEvent, OdinEvents };
+type OdinEvents = {
+  Events: OdinEventsArray;
+  Timestamp: OdinEventTimestamp;
+};
+
+export type { OdinEvent, OdinEvents, OdinEventsArray };
 
 /**
  * Fetches and parses emergency response events from ODIN's 112puls service
@@ -37,6 +42,11 @@ export async function getEvents(): Promise<OdinEvents> {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
 
+    // Get the timestamp
+    const timestamp: string | undefined = doc
+      .getElementById("CurrentTime")
+      ?.textContent?.replace("Sidst opdateret: ", "");
+
     // Find the table containing the events
     const table = doc.getElementById("GridView1");
     if (!table) {
@@ -46,7 +56,7 @@ export async function getEvents(): Promise<OdinEvents> {
     // Get all rows except the header row
     const rows = Array.from(table.getElementsByTagName("tr")).slice(1);
 
-    const events: OdinEvents = rows.map((row) => {
+    const events: OdinEventsArray = rows.map((row) => {
       const cells = Array.from(row.getElementsByTagName("td"));
       if (cells.length !== 4) {
         throw new Error("Unexpected table structure");
@@ -72,7 +82,12 @@ export async function getEvents(): Promise<OdinEvents> {
       };
     });
 
-    return events;
+    const OdinEvents: OdinEvents = {
+      Events: events,
+      Timestamp: timestamp,
+    };
+
+    return OdinEvents;
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(`Failed to fetch ODIN events: ${error.message}`);

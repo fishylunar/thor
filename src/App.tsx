@@ -21,7 +21,9 @@ function App() {
   <div className=" bg-slate-900 shadow-2xl rounded-xl mr-5 ml-5 mb-8 lg:mr-64 lg:ml-64">
     <OdinEventsTable events={events} />
   </div>
-  <Footer/>
+  <Footer>
+    <p className="text-center pb-4">Sidst opdateret: {events?.Timestamp}</p>
+  </Footer>
 </div>
     </ThemeProvider>
   );

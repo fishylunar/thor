@@ -22,7 +22,7 @@ function App() {
     <OdinEventsTable events={events} />
   </div>
   <Footer>
-    <p className="text-center pb-4">Sidst opdateret: {events?.Timestamp}</p>
+    <p className="text-center pb-2">Sidst opdateret: {events?.Timestamp}</p>
   </Footer>
 </div>
     </ThemeProvider>

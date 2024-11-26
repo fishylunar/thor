@@ -67,3 +67,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+table {
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}

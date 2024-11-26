@@ -18,10 +18,10 @@ export function OdinEventsTable({ events }: OdinEventsTableProps) {
             <TableCell>Timestamp</TableCell>
           </TableRow>
         </TableHeader>
-        <TableBody className='divide-y'>
+        <TableBody className='divide-y leading-tight'>
         {events?.Events ? (
             events.Events.map((odinEvent: OdinEvent) => (
-              <TableRow key={odinEvent.timestamp}>
+              <TableRow key={odinEvent.timestamp} className='leading-tight'>
                 <TableCell>{odinEvent.responder}</TableCell>
                 <TableCell>{odinEvent.station}</TableCell>
                 <TableCell>{odinEvent.message}</TableCell>

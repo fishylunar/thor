@@ -5,6 +5,7 @@
 # Thor
 
 A web application for viewing danish first responder messages.
+Native iOS app in the works :)
 
 Try it out! - https://thor.staun.tech
 

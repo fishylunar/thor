@@ -23,7 +23,7 @@ export type { OdinEvent, OdinEvents, OdinEventsArray };
  */
 export async function getEvents(): Promise<OdinEvents> {
   const url =
-    "https://corsproxy.io/?" + // CORS Proxy xd
+    "https://api.cors.lol/?url=" + // CORS Proxy xd
     encodeURIComponent("http://www.odin.dk/112puls/");
   try {
     const response = await fetch(url, {
